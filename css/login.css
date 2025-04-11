@@ -3,6 +3,6 @@ body{
     color: #1A181B;
     margin: 0px;
 }
-input{
-    text-align: center;
+form{
+    align-items: center; 
 }

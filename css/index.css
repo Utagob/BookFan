@@ -16,12 +16,13 @@ body{
   padding: 15px;
   display: block;
   text-align: center;
-}
-.navbar button{
   color: white;
   background-color: rgb(52, 52, 52);
   float: left;
   text-decoration: none;
+}
+.navbar button{
+  
   padding: 17px 17px;
   display: block;
   text-align: center;
@@ -45,10 +46,8 @@ img{
   width: 176px;
   height: 250px;
 }
-th, td{
+td{
   border: 1px solid black;
   font-weight: 800;
-}
-th{
   box-shadow: 2px 2px 10px black;
 }
