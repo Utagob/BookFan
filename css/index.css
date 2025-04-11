@@ -9,30 +9,32 @@ body{
   padding: 0;
   margin: 0;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 .navbar a{
   float: left;
   text-decoration: none;
   padding: 15px;
-  display: block;
   text-align: center;
   color: white;
   background-color: rgb(52, 52, 52);
   float: left;
   text-decoration: none;
 }
-.navbar button{
-  
-  padding: 17px 17px;
-  display: block;
-  text-align: center;
-}
-.navbar li:hover{
+.navbar a:hover{
   background-color: rgb(19, 19, 19);
+}
+.leftNav, 
+.centerNav,
+.rightNav{
+  display: flex;
+  gap: 20px;
 }
 #title{
   font-family: Ubuntu;
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   color: #ffffff;
 }
