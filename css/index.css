@@ -17,6 +17,15 @@ body{
   display: block;
   text-align: center;
 }
+.navbar button{
+  color: white;
+  background-color: rgb(52, 52, 52);
+  float: left;
+  text-decoration: none;
+  padding: 17px 17px;
+  display: block;
+  text-align: center;
+}
 .navbar li:hover{
   background-color: rgb(19, 19, 19);
 }
