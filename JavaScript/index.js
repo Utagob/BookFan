@@ -1,5 +1,3 @@
-console.log("Salut, lume");
-
 function book(i, n, a, p){
     this.img = i;
     this.name = n;
