@@ -3,27 +3,31 @@ body{
   color: #1A181B;
   margin: 0px;
 }
-.navbar ul{
+nav{
+  background-color: rgb(52, 52, 52);;
+  padding: 1rem;
+}
+nav ul{
   list-style-type: none;
-  background-color: rgb(52, 52, 52);
   margin: 0;
-  overflow: hidden;
+  padding: 0;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
 }
-.navbar a{
+nav ul li{
+  display: inline;
+}
+nav ul li a{
   float: left;
   text-decoration: none;
-  padding: 5px;
+  padding: 0.5rem 1rem;
   text-align: center;
   color: white;
   background-color: rgb(52, 52, 52);
 }
-.navbar a:hover{
+nav a:hover{
   background-color: rgb(19, 19, 19);
   border-radius: 5px;
-  padding: 15px;
 }
 .leftNav, 
 .centerNav,
@@ -44,8 +48,8 @@ img{
   width: 180px;
   height: 250px;
 }
-main h1{
-  text-align: center;
+main{
+  padding: 5px;
 }
 article{
   justify-content: space-between;
