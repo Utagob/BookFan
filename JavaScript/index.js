@@ -1,6 +1,5 @@
 console.log("Salut, lume");
 
-
 function book(i, n, a, p){
     this.img = i;
     this.name = n;
@@ -44,4 +43,9 @@ const atomicHabits = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/Atomi
 add(atomicHabits);
 const bigInJapan = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/Big_in_Japan.png", "Big in Japan", "Cosmin Leucuta", "151 MDL");
 add(bigInJapan);
-const celMaiBogatuOmDinBabilon = new book("C:\Users\Admin\Desktop\Practica\BookFan\img\Cel-mai-bogat.png", "Cel mai bogat om din babilon", "", "")
+const cmbodb = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/Cel-mai-bogat.png", "Cel mai bogat om din babilon", "Geroge S. Clason", "195 DML");
+add(cmbodb);
+const paid = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/pAInceputD.png", "Povestea ta a inceput demult", "Mark Wolynn", "150 MDL");
+add(paid);
+const q = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/m.jpeg", "Magia Copacului Departarilor", "Edin Blyton", "174 DML");
+add(q);
