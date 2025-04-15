@@ -38,6 +38,8 @@ function add(book){
 }
 const nouaPatru = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/1984.png", "1984", "George Orwell", "131 DML")
 add(nouaPatru);
-const At = new book(
-    "C:/Users/Admin/Desktop/Practica/BookFan/img/Atomic_Habits.png", "Atomic Habits", "James Clear", "254 DML");
-add (At);
+const atomicHabits = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/Atomic_Habits.png", "Atomic Habits", "James Clear", "254 DML");
+add(atomicHabits);
+const bigInJapan = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/Big_in_Japan.png", "Big in Japan", "Cosmin Leucuta", "151 MDL");
+add(bigInJapan);
+const celMaiBogatuOmDinBabilon = new book("C:\Users\Admin\Desktop\Practica\BookFan\img\Cel-mai-bogat.png", "Cel mai bogat om din babilon", "", "")
