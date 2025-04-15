@@ -11,6 +11,7 @@ nav ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -20,7 +21,7 @@ nav ul li{
 nav ul li a{
   float: left;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 15px 20px;
   text-align: center;
   color: white;
   background-color: rgb(52, 52, 52);
@@ -30,7 +31,6 @@ nav a:hover{
   border-radius: 5px;
 }
 .leftNav, 
-.centerNav,
 .rightNav{
   display: flex;
   gap: 20px;

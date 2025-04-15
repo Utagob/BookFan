@@ -1,5 +1,6 @@
 console.log("Salut, lume");
 
+
 function book(i, n, a, p){
     this.img = i;
     this.name = n;
@@ -36,6 +37,7 @@ function add(book){
 
     art.append(div);
 }
+
 const nouaPatru = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/1984.png", "1984", "George Orwell", "131 DML")
 add(nouaPatru);
 const atomicHabits = new book("C:/Users/Admin/Desktop/Practica/BookFan/img/Atomic_Habits.png", "Atomic Habits", "James Clear", "254 DML");
