@@ -36,10 +36,16 @@ nav a:hover{
   gap: 20px;
 }
 #title{
-  font-family: Ubuntu;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
   text-align: center;
   color: #ffffff;
+}
+.art{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+  text-align: center;
+  color: black;
 }
 .icon{
   color: #ffffff;
@@ -51,32 +57,126 @@ img{
 main{
   padding: 5px;
 }
-article{
-  justify-content: space-between;
-}
+
 .book{
   float: left;
   text-decoration: none;
   padding: 5px;
-  text-align: center;
-  float: left;
+  width: 180px;
+  height:  350px;
   margin: 10px 10px;
   box-shadow: 0 0 5px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
 }
 .name{
   font-family: fantasy;
   font-size: large;
-  margin: 1px;
+  margin: 0;
+  text-align: center;
 }
 .author{
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
   color:  #946500;
-  margin: 1px;
+  margin: 0;
+  text-align: center;
 }
-.price{
-  text-align: right;
+.add{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 1px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.add ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.add ul li{
+  display: inline;
+}
+.add ul li button{
+  background-color: bisque;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.add ul li button:active{
+  background-color: rgb(251, 212, 165);
+  width: 40px;
+  border-radius: 5px;
+}
+
+div.wrapper {
+  position: relative;
+}
+div.scrollmenu {
+  background-color: bisque;
+  white-space: nowrap;
+  overflow: hidden;
+}
+div.scrollmenu a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+div.scrollmenu a:hover {
+  background-color: #fcc37f;
+}
+.lNav {
+  display: inline-block;
+  color: black;
+  font-weight: bolder;
+  cursor: pointer;
+  background: bisque;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 10px;
+  height: 50px;
+  text-align: center;
+}
+.rNav {
+  display: inline-block;
+  color: black;
+  font-weight: bolder;
+  cursor: pointer;
+  background: bisque;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.1em;
+  width: 10px;
+  height: 50px;
+  text-align: center;  
+}
+
+footer{
+  background-color: cornsilk;
+  color: #1A181B;
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer ul li a{
+  size: 20px;
+}
+
+footer ul li a:hover{
+  size: 30px;
 }
