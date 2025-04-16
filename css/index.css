@@ -57,7 +57,6 @@ img{
 main{
   padding: 5px;
 }
-
 .book{
   float: left;
   text-decoration: none;
@@ -72,7 +71,6 @@ main{
   justify-content: space-between;
   text-overflow: ellipsis;
   white-space: wrap;
-  overflow: hidden;
 }
 .name{
   font-family: fantasy;
@@ -116,7 +114,6 @@ main{
   width: 40px;
   border-radius: 5px;
 }
-
 div.wrapper {
   position: relative;
 }
@@ -163,20 +160,19 @@ div.scrollmenu a:hover {
   height: 50px;
   text-align: center;  
 }
-
 footer{
-  background-color: cornsilk;
-  color: #1A181B;
+  background-color: rgb(229, 229, 229);
+  padding: 1rem;
 }
-
 footer ul{
   list-style-type: none;
 }
-
-footer ul li a{
-  size: 20px;
+footer a{
+  font-size: medium;
+  color: #1A181B;
+  text-align: center;
+  color: rgb(31, 31, 31);
 }
-
-footer ul li a:hover{
-  size: 30px;
+footer a:hover{
+  font-size: large;
 }
