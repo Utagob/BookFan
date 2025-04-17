@@ -4,7 +4,7 @@ body{
   margin: 0px;
 }
 nav{
-  background-color: rgb(52, 52, 52);;
+  background-color: #343434;;
   padding: 1rem;
 }
 nav ul{
@@ -164,21 +164,33 @@ div.scrollmenu {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-footer{
-  background-color: rgb(229, 229, 229);
-  padding: 1rem;
-  display: flex;
-  align-items: end;
+.container{
+  max-width: 1170px;
+  margin: auto;
+  display: flex
 }
-footer ul{
-  list-style-type: none;
+ul{
+  list-style: none;
 }
-footer a{
-  font-size: medium;
-  color: #1A181B;
-  text-align: center;
-  color: rgb(31, 31, 31);
+.footer{
+  background-color: #343434;
+  padding: 30px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
-footer a:hover{
-  font-size: large;
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col a{
+  color: #ffffff;
+  text-decoration: none;
+  margin: 20px 0;
+  transition: all 0.3 ease;
+}
+.footer a:hover{
+  color: #ffffff;
+  padding: 10px;
 }
