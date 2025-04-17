@@ -1,12 +1,36 @@
-body {
-    margin: 0;
-    min-width: 250px;
+body{
+    background-color: bisque;
+    color: #1A181B;
+    margin: 0px;
 }
-  
-* {
-    box-sizing: border-box;
+
+nav{
+    background-color: #343434;;
+    padding: 1rem;
+    display: flex;
 }
-  
+nav a{
+    float: left;
+    text-decoration: none;
+    padding: 15px 20px;
+    text-align: center;
+    color: white;
+    background-color: #343434;
+}
+
+#title{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+nav a:hover{
+    background-color: rgb(19, 19, 19);
+    border-radius: 5px;
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -66,7 +90,7 @@ ul li.checked::before {
 }
   
 .header {
-    background-color: #f44336;
+    background-color: #575656;
     padding: 30px 40px;
     color: white;
     text-align: center;
@@ -104,3 +128,21 @@ input {
 .addBtn:hover {
     background-color: #bbb;
 }
+.inputC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+  
+.inputC input {
+    width: 75%;
+    border-radius: 5px 0 0 5px;
+}
+  
+.inputC .addBtn {
+    width: 25%;
+    border-radius: 0 5px 5px 0;
+}
+  
