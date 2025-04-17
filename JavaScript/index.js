@@ -1,8 +1,8 @@
 $(document).ready(function () {
   const $this = $('.scrollmenu');
-  const $items = $this.find('a');
+  const $items = $this.find('div');
   const itemWidth = $items.outerWidth(true);
-  const scrollCount = 10;
+  const scrollCount = 2;
   
 
   function moveRight() {
@@ -20,15 +20,6 @@ $(document).ready(function () {
   $("body").keydown(function (e) {
     if ((e.keyCode || e.which) == 37) moveLeft();
     if ((e.keyCode || e.which) == 39) moveRight();
-  });
-
-  $this.on('wheel', function (e) {
-    if (e.originalEvent.deltaY < 0) {
-      moveLeft();
-    } else {
-      moveRight();
-    }
-    e.preventDefault();
   });
 
   $('.lNav').click(moveLeft);
