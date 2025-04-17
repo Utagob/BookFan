@@ -59,6 +59,7 @@ main{
   padding: 5px;
 }
 .book{
+  background-color: #ffdbae;
   text-decoration: none;
   padding: 5px;
   width: 180px;
@@ -87,7 +88,7 @@ main{
 }
 .book button{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: bisque;
+  background-color: #ffdbae;
   border-radius: 5px;
   width: 100px;
   height: 25px;
@@ -104,7 +105,7 @@ main{
   font-weight: bold;
 }
 .book button:active{
-  background-color: rgb(251, 212, 165);
+  background-color: #ffbe6e;
   border-radius: 5px;
 }
 div.wrapper {
