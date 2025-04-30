@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
     cartBox.classList.toggle("hidden");
   });
 });
-  document.addEventListener("click", (event) => {
-    if (event.target.tagName === "BUTTON" && event.target.closest(".book")) {
-      const bookElement = event.target.closest(".book");
-      const bookName = bookElement.querySelector(".name").textContent;
-      const bookAuthor = bookElement.querySelector(".author").textContent;
-      const bookPrice = parseFloat(event.target.textContent.replace(" MDL", ""));
-      const bookImageSrc = bookElement.querySelector("img").src;
+document.addEventListener("click", (event) => {
+  if (event.target.tagName === "BUTTON" && event.target.closest(".book")) {
+    const bookElement = event.target.closest(".book");
+    const bookName = bookElement.querySelector(".name").textContent;
+    const bookAuthor = bookElement.querySelector(".author").textContent;
+    const bookPrice = parseFloat(event.target.textContent.replace(" MDL", ""));
+    const bookImageSrc = bookElement.querySelector("img").src;
 
       const existingItem = Array.from(cartList.children).find((item) => {
         const nameElement = item.querySelector(".details .name");
@@ -115,30 +115,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const categories = document.querySelectorAll(".categories li a");
+  const categories = document.querySelectorAll(".categories li a"); // Ensure this matches your HTML
   const books = document.querySelectorAll(".book");
-  
+
   categories.forEach((categoryLink) => {
     categoryLink.addEventListener("click", (event) => {
-      event.preventDefault(); 
-      const category = event.target.textContent.toLowerCase(); 
-      filterBooks(category); 
+      event.preventDefault(); // Prevent default link behavior
+      const category = event.target.textContent.toLowerCase().trim(); // Get the category name
+      filterBooks(category); // Call the filter function
     });
   });
 
-  function filterBooks(category) {    
+  function filterBooks(category) {
     books.forEach((book) => {
       if (book.dataset.category === category || category === "all") {
-        book.style.display = "block";
+        book.style.display = "block"; // Show books that match the category
       } else {
-        book.style.display = "none";
+        book.style.display = "none"; // Hide books that don't match
       }
     });
   }
 
-
-  filterBooks("all");
+  filterBooks("all"); // Show all books by default
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("searchBar");
   const books = document.querySelectorAll(".book");

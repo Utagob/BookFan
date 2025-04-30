@@ -44,45 +44,45 @@
       </ul>
     </nav>
 
-    <div class="content">
-      <aside class="sidebar">
-        <h2>Categorii:</h2>
-        <ul class="Categorii:">
-          <li><a href="#">fantasy</a><hr></li>
-          <li><a href="#">social</a><hr></li>
-          <li><a href="#">stiintific</a><hr></li>
-          <li><a href="#">istoric</a><hr></li>
-          <li><a href="#">de_dragoste</a><hr></li>
-          <li><a href="#">detectiv</a><hr></li>
-          <li><a href="#">dezvoltare</a><hr></li>
-          <li><a href="#">biografie</a><hr></li>
-          <li><a href="#">horror</a><hr></li>
-          <li><a href="#">aventuri</a><hr></li>
-          <li><a href="#">pentru_copii</a><hr></li>
-          <li><a href="#">poezii</a><hr></li>
-          <li><a href="#">comixuri</a><hr></li>
-        </ul>
-      </aside>
+    <div id="cartBox" class="cart-box hidden">
+      <h2>Coș</h2>
+      <ul id="cartList"></ul>
+    </div>
+    
+    <div id="loginModal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="modalTitle">Login</h2>
+        <form id="modalForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter your username" />
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter your password" />
+          <button type="submit">Submit</button>
+        </form>
+        <button id="toggleModal">Sign Up</button>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
 
-      <div id="cartBox" class="cart-box hidden">
-        <h2>Coș</h2>
-        <ul id="cartList"></ul>
-      </div>
-      
-      <div id="loginModal" class="modal hidden">
-        <div class="modal-content">
-          <h2 id="modalTitle">Login</h2>
-          <form id="modalForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Enter your username" />
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password" />
-            <button type="submit">Submit</button>
-          </form>
-          <button id="toggleModal">Sign Up</button>
-          <button id="closeModal">Close</button>
-        </div>
-      </div>
+  <div class="content">
+    <aside class="sidebar">
+      <h2>Categorii:</h2>
+      <ul class="categories">
+        <li><a href="#">fantasy</a><hr></li>
+        <li><a href="#">social</a><hr></li>
+        <li><a href="#">stiintific</a><hr></li>
+        <li><a href="#">istoric</a><hr></li>
+        <li><a href="#">de_dragoste</a><hr></li>
+        <li><a href="#">detectiv</a><hr></li>
+        <li><a href="#">dezvoltare</a><hr></li>
+        <li><a href="#">biografie</a><hr></li>
+        <li><a href="#">horror</a><hr></li>
+        <li><a href="#">aventuri</a><hr></li>
+        <li><a href="#">pentru_copii</a><hr></li>
+        <li><a href="#">poezii</a><hr></li>
+        <li><a href="#">comixuri</a><hr></li>
+      </ul>
+    </aside>
 
       <main>
         <div class="book" data-category="dezvoltare">
@@ -210,7 +210,7 @@
           <button>160 MDL</button>
         </div>
 
-        <div class="book" data-category="de dragoste">
+        <div class="book" data-category="de_dragoste">
           <img src="img\b19.jpeg" />
           <p class="name">Pe aripile vântului</p>
           <p class="author">Margaret Mitchell</p>
@@ -315,7 +315,7 @@
           <button>240 MDL</button>
         </div>
 
-        <div class="book" data-category="de dragoste">
+        <div class="book" data-category="de_dragoste">
           <img src="img\b34.jpg" />
           <p class="name">Me Before You</p>
           <p class="author">Jojo Moyes</p>
