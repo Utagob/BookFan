@@ -139,3 +139,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filterBooks("all");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBar = document.getElementById("searchBar");
+  const books = document.querySelectorAll(".book");
+
+  searchBar.addEventListener("input", (event) => {
+    const query = event.target.value.toLowerCase().trim();
+    books.forEach((book) => {
+      const bookName = book.querySelector(".name").textContent.toLowerCase();
+      const bookAuthor = book.querySelector(".author").textContent.toLowerCase();
+      if (bookName.includes(query) || bookAuthor.includes(query)) {
+        book.style.display = "block"; // Show matching books
+      } else {
+        book.style.display = "none"; // Hide non-matching books
+      }
+    });
+  });
+});
