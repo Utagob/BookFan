@@ -149,10 +149,61 @@ document.addEventListener("DOMContentLoaded", () => {
       const bookName = book.querySelector(".name").textContent.toLowerCase();
       const bookAuthor = book.querySelector(".author").textContent.toLowerCase();
       if (bookName.includes(query) || bookAuthor.includes(query)) {
-        book.style.display = "block"; // Show matching books
+        book.style.display = "block"; 
       } else {
-        book.style.display = "none"; // Hide non-matching books
+        book.style.display = "none"; 
       }
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginButton = document.getElementById("loginButton");
+  const loginModal = document.getElementById("loginModal");
+  const closeModal = document.getElementById("closeModal");
+  const toggleModal = document.getElementById("toggleModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalForm = document.getElementById("modalForm");
+
+  loginButton.addEventListener("click", () => {
+    loginModal.classList.remove("hidden");
+  });
+
+  closeModal.addEventListener("click", () => {
+    loginModal.classList.add("hidden");
+  });
+
+  loginModal.addEventListener("click", (event) => {
+    if (event.target === loginModal) {
+      loginModal.classList.add("hidden");
+    }
+  });
+
+  toggleModal.addEventListener("click", () => {
+    if (modalTitle.textContent === "Login") {
+      modalTitle.textContent = "Sign Up";
+      modalForm.innerHTML = `
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" />
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+        <button type="submit">Sign Up</button>
+      `;
+      toggleModal.textContent = "Login";
+    } else {
+      modalTitle.textContent = "Login";
+      modalForm.innerHTML = `
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" />
+        <button type="submit">Submit</button>
+      `;
+      toggleModal.textContent = "Sign Up";
+    }
   });
 });

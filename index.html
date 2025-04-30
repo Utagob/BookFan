@@ -27,6 +27,9 @@
           <li>
             <a id="title" href="index.html">BookFan</a>
           </li>
+          <li>
+            <button id="loginButton">Login</button>
+          </li>
         </div>
         <div class="rightNav">
           <li>
@@ -43,7 +46,7 @@
 
     <div class="content">
       <aside class="sidebar">
-        <h2>Categories</h2>
+        <h2>Categorii</h2>
         <ul class="categories">
           <li><a href="#">fantasy</a><hr></li>
           <li><a href="#">sociale</a><hr></li>
@@ -65,6 +68,23 @@
         <h2>Cart</h2>
         <ul id="cartList"></ul>
       </div>
+      
+      <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+          <h2 id="modalTitle">Login</h2>
+          <form id="modalForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" />
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" />
+            <button type="submit">Submit</button>
+          </form>
+          <button id="toggleModal">Sign Up</button>
+          <button id="closeModal">Close</button>
+        </div>
+      </div>
+
+      
 
       <main>
         <div class="book" data-category="dezvoltare">
