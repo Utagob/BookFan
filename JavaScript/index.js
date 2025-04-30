@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     cartBox.classList.toggle("hidden");
   });
-
+});
   document.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON" && event.target.closest(".book")) {
       const bookElement = event.target.closest(".book");
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCartMessage();
       updateTotalPrice();
     }
-  });
+  
 
   function updateCartMessage() {
     if (cartList.children.length === 0) {
