@@ -10,11 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   totalPriceElement.textContent = "Total: 0 MDL";
   cartBox.appendChild(totalPriceElement);
 
-  if (!cartButton || !cartBox) {
-    console.error("Cart button or cart box element not found in the DOM.");
-    return;
-  }
-
   cartButton.addEventListener("click", (event) => {
     event.preventDefault();
     cartBox.classList.toggle("hidden");
@@ -34,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (existingItem) {
-        alert("This book is already in the cart.");
+        alert("Cartea data este deja selectata.");
         return;
       }
 
@@ -93,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCartMessage() {
     if (cartList.children.length === 0) {
       const emptyMessage = document.createElement("li");
-      emptyMessage.textContent = "Cart is empty";
+      emptyMessage.textContent = "Cosul este gol";
       emptyMessage.id = "emptyMessage";
       cartList.appendChild(emptyMessage);
     } else {

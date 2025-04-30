@@ -65,7 +65,7 @@ main{
   text-decoration: none;
   padding: 5px;
   width: 180px;
-  height: 350px;
+  height: 370px;
   margin: 10px 0;
   box-shadow: 0 0 5px;
   border-radius: 5px;
@@ -98,8 +98,9 @@ main{
   margin: 0;
   position: relative;
   left: 50%;
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  margin: 0 auto;
+  margin-top: auto;
 }
 .book button:hover{
   width: 120px;
@@ -112,15 +113,6 @@ main{
 }
 div.wrapper {
   position: relative;
-}
-div.scrollmenu {
-  background-color: bisque;
-  white-space: nowrap;
-  overflow-x: hidden; 
-  overflow-y: hidden; 
-  width: 100%;        
-  display: flex;     
-  gap: 5px; 
 }
 .lNav {
   display: inline-block;
@@ -235,13 +227,18 @@ ul{
 
 .sidebar {
   width: 170px; 
-  background-color: #f4f4f4;
+  background-color: bisque;
   padding: 20px;
-  border-right: 1px solid #ddd;
+  border-right: 3px solid black;
   overflow-y: auto; 
 }
 .sidebar ul li a {
-  text-decoration: none; 
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+.sidebar ul li hr{
+  border: 1px solid #ffbc6a;
 }
 
 main {
