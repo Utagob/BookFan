@@ -30,108 +30,62 @@
         </div>
         <div class="rightNav">
           <li>
-            <a
-              type="button"
-              href="C:\Users\Admin\Desktop\Practica\BookFan\html\cart.html"
-              ><i class="fa-solid fa-cart-shopping fa-2xl"></i
-            ></a>
+            <a type="button" id="cartButton"><i class="fa-solid fa-cart-shopping fa-2xl"></i></a>
           </li>
         </div>
       </ul>
     </nav>
 
-    <main>
-      <h1 class="art">Carti Valabile</h1>
-      <div class="wrapper">
-        <div class="lNav"><i class="fa-solid fa-arrow-left" id="lN"></i></div>
-        <div class="scrollmenu">
-          <div class="book">
-            <img src="img\b1.png" />
-            <p class="name">Atomic Habits</p>
-            <p class="author">James Clear</p>
-            <button>254 DML</button>
-          </div>
+  <div class="content">
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <ul class="categories">
+        <li><a href="#">Fiction</a></li>
+        <li><a href="#">Non-Fiction</a></li>
+        <li><a href="#">Science</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Fantasy</a></li>
+        <li><a href="#">Romance</a></li>
+        <li><a href="#">Mystery</a></li>
+        <li><a href="#">Biography</a></li>
+        <li><a href="#">Self-Help</a></li>
+        <li><a href="#">Children's Books</a></li>
+        <li><a href="#">Horror</a></li>
+        <li><a href="#">Adventure</a></li>
+        <li><a href="#">Classics</a></li>
+        <li><a href="#">Poetry</a></li>
+        <li><a href="#">Comics</a></li>
+      </ul>
+    </aside>
 
-          <div class="book">
-            <img src="img\b2.png" />
-            <p class="name">1984</p>
-            <p class="author">George Orwell</p>
-            <button>131 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b3.png" />
-            <p class="name">Big in Japan</p>
-            <p class="author">Cosmin Leucuta</p>
-            <button>151 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b4.png" />
-            <p class="name">Cel mai bogat om din babilon</p>
-            <p class="author">Geroge S. Clason</p>
-            <button>195 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b5.png" />
-            <p class="name">Povestea ta a inceput demult</p>
-            <p class="author">Mark Wolynn</p>
-            <button>150 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b6.jpeg" />
-            <p class="name">Magia Copacului Departarilor</p>
-            <p class="author">Edin Blyton</p>
-            <button>174 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b7.png" />
-            <p class="name">Pe urmele zeilor</p>
-            <p class="author">Ayana Gray</p>
-            <button>236 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b8.jpeg" />
-            <p class="name">Nascute din vinovatie</p>
-            <p class="author">Ioanna Elmy</p>
-            <button>185 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b9.jpeg" />
-            <p class="name">Minimarketul doamnei Yeom</p>
-            <p class="author">Kim Ho-Yeon</p>
-            <button>236 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b10.jpeg" />
-            <p class="name">Comunicarea nonviolenta</p>
-            <p class="author">B. Rosenberg</p>
-            <button>116 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b11.jpeg" />
-            <p class="name">Sufar, deci exist</p>
-            <p class="author">Pascal Bruckner</p>
-            <button>150 MDL</button>
-          </div>
-
-          <div class="book">
-            <img src="img\b12.png" />
-            <p class="name">Axa autocratilor</p>
-            <p class="author">Anne Applebaum</p>
-            <button>273 MDL</button>
-          </div>
-        </div>
-        <div class="rNav"><i class="fa-solid fa-arrow-right" id="rN"></i></div>
+      <div id="cartBox" class="cart-box hidden">
+        <h2>Cart</h2>
+        <ul id="cartList"></ul>
       </div>
-    </main>
+
+      <main>
+        <div class="book" data-category="fiction">
+          <img src="img\b1.png" />
+          <p class="name">Atomic Habits</p>
+          <p class="author">James Clear</p>
+          <button>254 MDL</button>
+        </div>
+        
+        <div class="book" data-category="fiction">
+          <img src="img\b2.png" />
+          <p class="name">1984</p>
+          <p class="author">George Orwell</p>
+          <button>131 MDL</button>
+        </div>
+        
+        <div class="book" data-category="non-fiction">
+          <img src="img\b3.png" />
+          <p class="name">Big in Japan</p>
+          <p class="author">Cosmin Leucuta</p>
+          <button>151 MDL</button>
+        </div>
+      </main>
+    </div>
 
     <footer class="footer">
       <div class="container">

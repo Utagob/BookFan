@@ -1,7 +1,9 @@
 body{
   background-color: bisque;
   color: #1A181B;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  height: 100v;
 }
 nav{
   background-color: #343434;;
@@ -58,13 +60,13 @@ img{
 main{
   padding: 5px;
 }
-.book{
+.book {
   background-color: #ffdbae;
   text-decoration: none;
   padding: 5px;
   width: 180px;
-  height:  350px;
-  margin: 10px 10px;
+  height: 350px;
+  margin: 10px 0;
   box-shadow: 0 0 5px;
   border-radius: 5px;
   display: flex;
@@ -158,7 +160,7 @@ div.scrollmenu {
 }
 #rN{
   margin: 0;
-  position: absolute;
+position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
@@ -175,7 +177,7 @@ ul{
 .footer{
   background-color: #343434;
   padding: 30px 0;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -194,4 +196,134 @@ ul{
   color: #ffffff;
   padding: 10px;
   cursor: pointer;
+}
+.cart-box {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border-radius: 5px;
+  width: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cart-box:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-box.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+#emptyMessage {
+  color: gray;
+  font-style: italic;
+}
+/* Flexbox layout for the content container */
+.content {
+  display: flex; /* Use flexbox to align children side by side */
+  flex-direction: row; /* Ensure items are in a row */
+  height: calc(100vh - 120px); /* Full height minus header and footer */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 170px; /* Fixed width for the sidebar */
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+.sidebar ul li a {
+  text-decoration: none; /* Remove underline */
+}
+/* Main content styles */
+main {
+  flex: 1; /* Take up the remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Enable scrolling for the main content */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow books to wrap to the next row */
+  gap: 20px; /* Add spacing between books */
+  justify-content: flex-start; /* Align books to the left */
+}
+.cart-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  gap: 10px; /* Add spacing between items */
+  max-height: 300px; /* Limit height to make it scrollable */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: center; /* Vertically center the content */
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Optional: Add a separator between items */
+}
+
+.cart-item .left {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack the button and price vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 10px; /* Add spacing between the button and price */
+}
+
+.cart-item .left button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.cart-item .left button:hover {
+  background-color: #ff1a1a;
+  color: white;
+}
+
+.cart-item .left span {
+  font-size: 14px; /* Adjust font size for the price */
+  font-weight: bold;
+}
+
+.cart-item .right {
+  display: flex;
+  align-items: center; /* Align image and text vertically */
+  gap: 10px; /* Add spacing between image and text */
+}
+
+.cart-item .right img {
+  width: 50px; /* Set a fixed width for the image */
+  height: 70px; /* Set a fixed height for the image */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.cart-item .right .details {
+  display: flex;
+  flex-direction: column; /* Stack book name and author vertically */
+  text-align: right; /* Align text to the right */
+}
+
+.cart-item .right .details .name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cart-item .right .details .author {
+  font-size: 12px;
+  color: #555;
 }
