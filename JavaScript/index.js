@@ -1,9 +1,13 @@
+// Define totalPriceElement globally so it can be accessed by all functions
+let totalPriceElement;
+
 document.addEventListener("DOMContentLoaded", () => {
   const cartList = document.getElementById("cartList");
   const cartButton = document.getElementById("cartButton");
   const cartBox = document.getElementById("cartBox");
 
-  const totalPriceElement = document.createElement("div");
+  // Initialize totalPriceElement
+  totalPriceElement = document.createElement("div");
   totalPriceElement.id = "totalPrice";
   totalPriceElement.style.marginTop = "10px";
   totalPriceElement.style.fontWeight = "bold";
@@ -15,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     cartBox.classList.toggle("hidden");
   });
 });
+
 document.addEventListener("click", (event) => {
+  const cartList = document.getElementById("cartList");
+
   if (event.target.tagName === "BUTTON" && event.target.closest(".book")) {
     const bookElement = event.target.closest(".book");
     const bookName = bookElement.querySelector(".name").textContent;
@@ -23,67 +30,66 @@ document.addEventListener("click", (event) => {
     const bookPrice = parseFloat(event.target.textContent.replace(" MDL", ""));
     const bookImageSrc = bookElement.querySelector("img").src;
 
-      const existingItem = Array.from(cartList.children).find((item) => {
-        const nameElement = item.querySelector(".details .name");
-        return nameElement && nameElement.textContent === bookName;
-      });
+    const existingItem = Array.from(cartList.children).find((item) => {
+      const nameElement = item.querySelector(".details .name");
+      return nameElement && nameElement.textContent === bookName;
+    });
 
-      if (existingItem) {
-        alert("Cartea data este deja selectata.");
-        return;
-      }
+    if (existingItem) {
+      alert("Cartea data este deja selectata.");
+      return;
+    }
 
-      const listItem = document.createElement("li");
-      listItem.classList.add("cart-item");
+    const listItem = document.createElement("li");
+    listItem.classList.add("cart-item");
 
-      const leftDiv = document.createElement("div");
-      leftDiv.classList.add("left");
-      const removeButton = document.createElement("button");
-      removeButton.classList.add("remove-btn");
+    const leftDiv = document.createElement("div");
+    leftDiv.classList.add("left");
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("remove-btn");
 
-      const priceSpan = document.createElement("span");
-      priceSpan.textContent = `${bookPrice} MDL`;
-      priceSpan.style.marginRight = "10px"; 
-      removeButton.appendChild(priceSpan);
+    const priceSpan = document.createElement("span");
+    priceSpan.textContent = `${bookPrice} MDL`;
+    priceSpan.style.marginRight = "10px";
+    removeButton.appendChild(priceSpan);
 
-      const removeIcon = document.createElement("i");
-      removeIcon.classList.add("fa-solid", "fa-xmark");
-      removeButton.appendChild(removeIcon);
-      leftDiv.appendChild(removeButton);
+    const removeIcon = document.createElement("i");
+    removeIcon.classList.add("fa-solid", "fa-xmark");
+    removeButton.appendChild(removeIcon);
+    leftDiv.appendChild(removeButton);
 
-      const rightDiv = document.createElement("div");
-      rightDiv.classList.add("right");
-      const bookImage = document.createElement("img");
-      bookImage.src = bookImageSrc;
-      bookImage.alt = bookName;
-      const detailsDiv = document.createElement("div");
-      detailsDiv.classList.add("details");
-      const nameSpan = document.createElement("span");
-      nameSpan.classList.add("name");
-      nameSpan.textContent = bookName;
-      const authorSpan = document.createElement("span");
-      authorSpan.classList.add("author");
-      authorSpan.textContent = bookAuthor;
-      detailsDiv.appendChild(nameSpan);
-      detailsDiv.appendChild(authorSpan);
-      rightDiv.appendChild(bookImage);
-      rightDiv.appendChild(detailsDiv);
+    const rightDiv = document.createElement("div");
+    rightDiv.classList.add("right");
+    const bookImage = document.createElement("img");
+    bookImage.src = bookImageSrc;
+    bookImage.alt = bookName;
+    const detailsDiv = document.createElement("div");
+    detailsDiv.classList.add("details");
+    const nameSpan = document.createElement("span");
+    nameSpan.classList.add("name");
+    nameSpan.textContent = bookName;
+    const authorSpan = document.createElement("span");
+    authorSpan.classList.add("author");
+    authorSpan.textContent = bookAuthor;
+    detailsDiv.appendChild(nameSpan);
+    detailsDiv.appendChild(authorSpan);
+    rightDiv.appendChild(bookImage);
+    rightDiv.appendChild(detailsDiv);
 
-      listItem.appendChild(leftDiv);
-      listItem.appendChild(rightDiv);
-      
-      cartList.appendChild(listItem);
+    listItem.appendChild(leftDiv);
+    listItem.appendChild(rightDiv);
 
-      removeButton.addEventListener("click", () => {
-        cartList.removeChild(listItem);
-        updateCartMessage();
-        updateTotalPrice();
-      });
+    cartList.appendChild(listItem);
 
+    removeButton.addEventListener("click", () => {
+      cartList.removeChild(listItem);
       updateCartMessage();
       updateTotalPrice();
-    }
-  
+    });
+
+    updateCartMessage();
+    updateTotalPrice();
+  }
 
   function updateCartMessage() {
     if (cartList.children.length === 0) {
@@ -99,44 +105,49 @@ document.addEventListener("click", (event) => {
     }
   }
 
-
   function updateTotalPrice() {
     let total = 0;
     const cartItems = cartList.querySelectorAll(".cart-item");
     cartItems.forEach((item) => {
-      const priceText = item.querySelector(".left span").textContent;
-      const price = parseFloat(priceText.replace(" MDL", ""));
-      total += price;
+      const priceText = item.querySelector(".left span")?.textContent; // Use optional chaining to avoid errors
+      console.log("Price Text:", priceText); // Debugging
+      if (priceText) {
+        const price = parseFloat(priceText.replace(" MDL", ""));
+        console.log("Parsed Price:", price); // Debugging
+        total += price;
+      }
     });
+    console.log("Total Price:", total); // Debugging
     totalPriceElement.textContent = `Total: ${total.toFixed(2)} MDL`;
   }
 
   updateCartMessage();
+  updateTotalPrice();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const categories = document.querySelectorAll(".categories li a"); // Ensure this matches your HTML
+  const categories = document.querySelectorAll(".categories li a"); 
   const books = document.querySelectorAll(".book");
 
   categories.forEach((categoryLink) => {
     categoryLink.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent default link behavior
-      const category = event.target.textContent.toLowerCase().trim(); // Get the category name
-      filterBooks(category); // Call the filter function
+      event.preventDefault(); 
+      const category = event.target.textContent.toLowerCase().trim(); 
+      filterBooks(category);
     });
   });
 
   function filterBooks(category) {
     books.forEach((book) => {
       if (book.dataset.category === category || category === "all") {
-        book.style.display = "block"; // Show books that match the category
+        book.style.display = "block"; 
       } else {
-        book.style.display = "none"; // Hide books that don't match
+        book.style.display = "none"; 
       }
     });
   }
 
-  filterBooks("all"); // Show all books by default
+  filterBooks("all"); 
 });
 
 document.addEventListener("DOMContentLoaded", () => {
